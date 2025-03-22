@@ -59,24 +59,41 @@ FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligênc
 
 ## 🛠️ Stack Tecnológica
 
-### Frontend (No-Code)
-- **Plataforma:** Bubble.io
-  - Interface responsiva
-  - Autenticação de usuários
-  - Banco de dados integrado
+### Frontend
+- **React 18+ com TypeScript**
+  - Vite para build
+  - TailwindCSS para estilização
+  - React Query para cache e estado
+  - Zustand para estado global
+  - React Router para navegação
 
-### Backend & IA
+### Backend
+- **Node.js 20+ com TypeScript**
+  - Express.js para API REST
+  - TypeORM como ORM
+  - Jest para testes
+  - Winston para logging
+
+### Banco de Dados
+- **PostgreSQL**
+  - Schemas otimizados
+  - Índices para performance
+  - Backup automático
+  - Replicação para alta disponibilidade
+
+### IA & Infraestrutura
 - **[Hyperbolic](http://hyperbolic.xyz/)**
-  - Infraestrutura de IA otimizada
   - GPUs de alta performance (A100 & H100)
-  - Redução de até 80% nos custos de processamento
-  - Baixa latência para respostas em tempo real
+  - Baixa latência
+  - Custo otimizado
+  - Alta disponibilidade
 
-### Automação
-- **Make (Integromat)**
-  - Envio de notificações
-  - Processamento em background
-  - Integração com APIs
+### DevOps
+- **AWS**
+  - ECS para containers
+  - RDS para PostgreSQL
+  - CloudFront para CDN
+  - Route53 para DNS
 
 ## 💰 Modelo de Monetização
 
@@ -147,26 +164,29 @@ FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligênc
 
 ## 📅 Cronograma de Desenvolvimento
 
-### Fase 1: Validação (2 semanas)
-- Pesquisa com potenciais usuários
-- Protótipo de baixa fidelidade
-- Testes de conceito
+### Fase 1: Setup & Arquitetura (2 semanas)
+- Setup do ambiente de desenvolvimento
+- Configuração do CI/CD
+- Criação da estrutura base do projeto
+- Setup do banco de dados
 
-### Fase 2: MVP (6 semanas)
-- Setup no Bubble.io
+### Fase 2: MVP Core (6 semanas)
+- Desenvolvimento do frontend em React
+- Implementação da API REST
 - Integração com Hyperbolic
-- Desenvolvimento das telas principais
-- Configuração de automações
+- Desenvolvimento das features principais
 
-### Fase 3: Testes (2 semanas)
-- Testes internos
-- Beta fechado
-- Ajustes e correções
+### Fase 3: Testes & Otimização (2 semanas)
+- Testes unitários e de integração
+- Otimização de performance
+- Testes de carga
+- Ajustes de UX
 
-### Fase 4: Lançamento (2 semanas)
-- Marketing inicial
+### Fase 4: Deploy & Launch (2 semanas)
+- Deploy na infraestrutura AWS
+- Testes em produção
+- Lançamento beta fechado
 - Lançamento público
-- Coleta de feedback
 
 ## 📊 Métricas de Sucesso
 
@@ -175,28 +195,29 @@ FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligênc
 - Retenção após 30 dias
 - NPS
 - Tempo médio de uso diário
-- Custo de processamento por usuário
+- Performance da aplicação
+- Custo por usuário
 
 ## 🔒 Segurança e Privacidade
 
-- Criptografia de dados
+- Autenticação JWT
+- Criptografia de dados sensíveis
 - Conformidade com LGPD
 - Autenticação dois fatores
 - Backup regular de dados
-- Isolamento de dados por usuário
+- Monitoramento 24/7
 
 ## 🔄 Próximos Passos
 
-1. Validar ideia com pesquisa de mercado
-2. Criar protótipo no Bubble.io
-3. Configurar infraestrutura Hyperbolic
-4. Desenvolver MVP
-5. Testar com usuários beta
-6. Lançar versão 1.0
+1. Setup do ambiente de desenvolvimento
+2. Criação da estrutura base do projeto
+3. Desenvolvimento do MVP
+4. Testes e otimização
+5. Deploy e lançamento
 
 ## 📚 Documentação
 
-- [Setup do Bubble.io](docs/bubble-setup.md)
+- [Stack Técnica](docs/technical-stack.md)
 - [Integração Hyperbolic](docs/hyperbolic-integration.md)
 - [Plano de Marketing](docs/marketing-growth.md)
 
