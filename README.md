@@ -66,10 +66,11 @@ FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligênc
   - Banco de dados integrado
 
 ### Backend & IA
-- **OpenAI GPT-4 API**
-  - Análise de padrões
-  - Geração de recomendações
-  - Processamento de linguagem natural
+- **[Hyperbolic](http://hyperbolic.xyz/)**
+  - Infraestrutura de IA otimizada
+  - GPUs de alta performance (A100 & H100)
+  - Redução de até 80% nos custos de processamento
+  - Baixa latência para respostas em tempo real
 
 ### Automação
 - **Make (Integromat)**
@@ -153,7 +154,7 @@ FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligênc
 
 ### Fase 2: MVP (6 semanas)
 - Setup no Bubble.io
-- Integração com OpenAI
+- Integração com Hyperbolic
 - Desenvolvimento das telas principais
 - Configuração de automações
 
@@ -174,6 +175,7 @@ FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligênc
 - Retenção após 30 dias
 - NPS
 - Tempo médio de uso diário
+- Custo de processamento por usuário
 
 ## 🔒 Segurança e Privacidade
 
@@ -181,15 +183,22 @@ FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligênc
 - Conformidade com LGPD
 - Autenticação dois fatores
 - Backup regular de dados
+- Isolamento de dados por usuário
 
 ## 🔄 Próximos Passos
 
 1. Validar ideia com pesquisa de mercado
 2. Criar protótipo no Bubble.io
-3. Integrar OpenAI GPT-4
+3. Configurar infraestrutura Hyperbolic
 4. Desenvolver MVP
 5. Testar com usuários beta
 6. Lançar versão 1.0
+
+## 📚 Documentação
+
+- [Setup do Bubble.io](docs/bubble-setup.md)
+- [Integração Hyperbolic](docs/hyperbolic-integration.md)
+- [Plano de Marketing](docs/marketing-growth.md)
 
 ---
 
