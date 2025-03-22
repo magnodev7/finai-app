@@ -1,231 +1,91 @@
-# FinAI - Seu Consultor Financeiro Inteligente 🤖💰
+# FinAI - Seu Assistente Financeiro Inteligente
 
-> *"Transformando dados em decisões financeiras inteligentes"*
+## Configuração do Ambiente
 
-## 🎯 Visão Geral
+### Variáveis de Ambiente
 
-FinAI é um aplicativo de consultoria financeira pessoal que utiliza inteligência artificial para ajudar usuários a gerenciar melhor seu dinheiro. Através de análises automatizadas e recomendações personalizadas, o app funciona como um consultor financeiro digital acessível 24/7.
+Para executar este projeto, você precisará configurar algumas variáveis de ambiente. Siga os passos abaixo:
 
-## 👥 Público-Alvo
+1. Copie o arquivo `.env.example` para um novo arquivo chamado `.env`:
+```bash
+cp .env.example .env
+```
 
-- **Perfil Principal:** Jovens profissionais (25-40 anos)
-- **Características:**
-  - Familiaridade com tecnologia
-  - Renda média
-  - Interesse em organização financeira
-  - Busca por autonomia financeira
-- **Dores Resolvidas:**
-  - Dificuldade em organizar finanças
-  - Falta de conhecimento financeiro
-  - Custo alto de consultoria financeira tradicional
-  - Tempo limitado para planejamento financeiro
+2. Edite o arquivo `.env` e preencha com suas credenciais:
 
-## 🎨 Branding
+```env
+# Frontend Environment Variables
+VITE_API_URL=http://localhost:3000
+VITE_HYPERBOLIC_API_URL=seu_url_hyperbolic
+VITE_HYPERBOLIC_API_KEY=sua_chave_hyperbolic
 
-- **Nome:** FinAI (Finance + AI)
-- **Slogan:** "Seu consultor financeiro inteligente"
-- **Cores:**
-  - Principal: #2563EB (Azul Royal)
-  - Secundária: #10B981 (Verde Esmeralda)
-  - Acentos: #6366F1 (Índigo)
-- **Personalidade da Marca:**
-  - Profissional mas amigável
-  - Tecnológica e inovadora
-  - Confiável e segura
-  - Simples e acessível
+# Backend Environment Variables
+DATABASE_URL=sua_url_do_banco_de_dados
+JWT_SECRET=sua_chave_secreta_jwt
 
-## ⚙️ Funcionalidades do MVP
+# API Keys
+OPENAI_API_KEY=sua_chave_openai
+```
 
-### Core Features
-1. **Gestão de Finanças**
-   - Entrada manual de receitas e despesas
-   - Categorização automática de gastos
-   - Visualização de saldo atual
+⚠️ **IMPORTANTE: Nunca comite o arquivo `.env` no repositório. Ele contém informações sensíveis e já está incluído no `.gitignore`.**
 
-2. **Análise Inteligente**
-   - Dashboard com resumo mensal
-   - Gráficos de distribuição de gastos
-   - Alertas de gastos excessivos
+## Instalação
 
-3. **Recomendações por IA**
-   - Dicas diárias personalizadas
-   - Sugestões de economia
-   - Análise de padrões de gastos
+1. Clone o repositório:
+```bash
+git clone https://github.com/magnodev7/finai-app.git
+cd finai-app
+```
 
-4. **Notificações**
-   - Lembretes de contas
-   - Dicas financeiras diárias
-   - Alertas de orçamento
+2. Instale as dependências:
+```bash
+npm install
+```
 
-## 🛠️ Stack Tecnológica
+3. Configure as variáveis de ambiente conforme descrito acima.
 
-### Frontend
-- **React 18+ com TypeScript**
-  - Vite para build
-  - TailwindCSS para estilização
-  - React Query para cache e estado
-  - Zustand para estado global
-  - React Router para navegação
+4. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
 
-### Backend
-- **Node.js 20+ com TypeScript**
-  - Express.js para API REST
-  - TypeORM como ORM
-  - Jest para testes
-  - Winston para logging
+## Tecnologias Utilizadas
 
-### Banco de Dados
-- **PostgreSQL**
-  - Schemas otimizados
-  - Índices para performance
-  - Backup automático
-  - Replicação para alta disponibilidade
+- React + TypeScript
+- Vite
+- TailwindCSS
+- React Query
+- Zustand
+- React Router DOM
+- Recharts
+- Headless UI
 
-### IA & Infraestrutura
-- **[Hyperbolic](http://hyperbolic.xyz/)**
-  - GPUs de alta performance (A100 & H100)
-  - Baixa latência
-  - Custo otimizado
-  - Alta disponibilidade
+## Estrutura do Projeto
 
-### DevOps
-- **AWS**
-  - ECS para containers
-  - RDS para PostgreSQL
-  - CloudFront para CDN
-  - Route53 para DNS
+```
+src/
+├── components/     # Componentes reutilizáveis
+├── pages/         # Páginas da aplicação
+├── hooks/         # Hooks personalizados
+├── services/      # Serviços e APIs
+└── styles/        # Estilos globais
+```
 
-## 💰 Modelo de Monetização
+## Segurança
 
-### Plano Gratuito
-- Registro básico de receitas/despesas
-- Análise simples de gastos
-- Dica financeira semanal
+- Todas as chaves de API e credenciais sensíveis devem ser armazenadas em variáveis de ambiente
+- Nunca comite arquivos `.env` no repositório
+- Use o arquivo `.env.example` como template para as variáveis necessárias
+- Mantenha suas chaves de API seguras e não as compartilhe
 
-### Plano Premium (R$19,90/mês)
-- Análise detalhada de gastos
-- Recomendações personalizadas diárias
-- Relatórios financeiros avançados
-- Metas financeiras com IA
-- Suporte prioritário
+## Contribuindo
 
-### Parcerias
-- Bancos digitais
-- Corretoras de investimentos
-- Seguradoras
-- Cartões de crédito
+1. Crie um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-## 🚀 Plano de Crescimento
+## Licença
 
-### Aquisição de Usuários
-1. **Marketing Digital**
-   - Blog com conteúdo educativo
-   - Presença ativa no Instagram/TikTok
-   - Anúncios direcionados no Facebook/Instagram
-
-2. **Parcerias**
-   - Influenciadores de finanças
-   - Blogs especializados
-   - Comunidades financeiras
-
-### Retenção
-1. **Gamificação**
-   - Sistema de pontos por metas atingidas
-   - Badges de conquistas
-   - Rankings de economia
-
-2. **Engajamento**
-   - Notificações personalizadas
-   - Newsletter semanal
-   - Comunidade de usuários
-
-## 📱 Interface do Usuário
-
-### Telas Principais
-1. **Dashboard**
-   - Visão geral das finanças
-   - Gráficos principais
-   - Ações rápidas
-
-2. **Transações**
-   - Lista de receitas/despesas
-   - Filtros e categorias
-   - Adicionar transação
-
-3. **Análise IA**
-   - Recomendações personalizadas
-   - Insights financeiros
-   - Previsões
-
-4. **Perfil**
-   - Configurações
-   - Plano atual
-   - Metas financeiras
-
-## 📅 Cronograma de Desenvolvimento
-
-### Fase 1: Setup & Arquitetura (2 semanas)
-- Setup do ambiente de desenvolvimento
-- Configuração do CI/CD
-- Criação da estrutura base do projeto
-- Setup do banco de dados
-
-### Fase 2: MVP Core (6 semanas)
-- Desenvolvimento do frontend em React
-- Implementação da API REST
-- Integração com Hyperbolic
-- Desenvolvimento das features principais
-
-### Fase 3: Testes & Otimização (2 semanas)
-- Testes unitários e de integração
-- Otimização de performance
-- Testes de carga
-- Ajustes de UX
-
-### Fase 4: Deploy & Launch (2 semanas)
-- Deploy na infraestrutura AWS
-- Testes em produção
-- Lançamento beta fechado
-- Lançamento público
-
-## 📊 Métricas de Sucesso
-
-- Usuários ativos mensais
-- Taxa de conversão para premium
-- Retenção após 30 dias
-- NPS
-- Tempo médio de uso diário
-- Performance da aplicação
-- Custo por usuário
-
-## 🔒 Segurança e Privacidade
-
-- Autenticação JWT
-- Criptografia de dados sensíveis
-- Conformidade com LGPD
-- Autenticação dois fatores
-- Backup regular de dados
-- Monitoramento 24/7
-
-## 🔄 Próximos Passos
-
-1. Setup do ambiente de desenvolvimento
-2. Criação da estrutura base do projeto
-3. Desenvolvimento do MVP
-4. Testes e otimização
-5. Deploy e lançamento
-
-## 📚 Documentação
-
-- [Stack Técnica](docs/technical-stack.md)
-- [Integração Hyperbolic](docs/hyperbolic-integration.md)
-- [Plano de Marketing](docs/marketing-growth.md)
-
----
-
-## 📬 Contato
-
-Para mais informações ou parcerias, entre em contato:
-- Email: contato@finai.app
-- Website: www.finai.app
-- LinkedIn: /company/finai
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
