@@ -2,43 +2,42 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:16-alpine
+    container_name: finai_postgres
+    image: postgres:15-alpine
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: finai_user
+      POSTGRES_PASSWORD: finai_password
+      POSTGRES_DB: finai_db
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - finai_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U finai_user -d finai_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
+  pgadmin:
+    container_name: finai_pgadmin
+    image: dpage/pgadmin4
     environment:
-      NODE_ENV: development
-      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
-      PORT: 4000
+      PGADMIN_DEFAULT_EMAIL: admin@finai.com
+      PGADMIN_DEFAULT_PASSWORD: admin
     ports:
-      - "4000:4000"
+      - "5050:80"
     depends_on:
       - postgres
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile.frontend
-    environment:
-      VITE_API_URL: http://localhost:4000
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+    networks:
+      - finai_network
 
 volumes:
   postgres_data:
+    name: finai_postgres_data
+
+networks:
+  finai_network:
+    name: finai_network
+    driver: bridge
