@@ -5,17 +5,18 @@ services:
     container_name: finai_postgres
     image: postgres:15-alpine
     environment:
-      POSTGRES_USER: finai_user
-      POSTGRES_PASSWORD: finai_password
-      POSTGRES_DB: finai_db
+      POSTGRES_USER: ${POSTGRES_USER:-finai_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-finai_password}
+      POSTGRES_DB: ${POSTGRES_DB:-finai_db}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - finai_network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U finai_user -d finai_db"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-finai_user} -d ${POSTGRES_DB:-finai_db}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -24,18 +25,23 @@ services:
     container_name: finai_pgadmin
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@finai.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@finai.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
     ports:
       - "5050:80"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     networks:
       - finai_network
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
   postgres_data:
     name: finai_postgres_data
+  pgadmin_data:
+    name: finai_pgadmin_data
 
 networks:
   finai_network:
